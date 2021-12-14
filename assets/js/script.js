@@ -1,8 +1,32 @@
-var countdown = 40
+var countdown = 30
 var user = {
     firstInitial: firstInitial.value.trim(),
     lastInitial: lastInitial.value.trim()
 };
+
+var body = document.body;
+var h1El = document.createElement("h1");
+var question1El = document.createElement("div");
+var question2El = document.createElement("div");
+var question3El = document.createElement("div");
+// create ordered list element
+var listEl = document.createElement("ol");
+// create ordered list items
+var li1 = document.createElement("li");
+var li2 = document.createElement("li");
+var li3 = document.createElement("li");
+
+
+h1El.textContent ="Questions";
+question1El.textContent = "Which of these is used by baseball teams for managing databases";
+question2El.textContent = "Arrays in JavaScript can be used to store___";
+question3El.textContent = "The condition in and if/else statements is enclosed with___";
+
+li1.textcontent = "SQL", "Python", "R", " all of the above";
+li2.textcontent = "numbers and strings", "other arrays", "booleans", "all of the above";
+li3.textcontent = "parenthesis", "quotes", "curly brackets", "square brackets";
+
+
 
 // credit to https://www.sitepoint.com/simple-javascript-quiz/
 const quizContainer = document.getElementById('quiz');
@@ -35,7 +59,7 @@ const myQuestions = [
         correctAnswer: "d"
     },
     {
-        question: "The condition in and if/else statement is enclosed with ___",
+        question: "The condition in and if/else statements is enclosed with ___",
         answers: {
             a: "parenthesis",
             b: "quotes",
@@ -46,6 +70,11 @@ const myQuestions = [
     },
 ],
 // end of credit
+
+var startQuiz = function() {
+    
+}
+
 
 var endQuiz = function() {
     window.alert("Your time is up, lets see how you did")
