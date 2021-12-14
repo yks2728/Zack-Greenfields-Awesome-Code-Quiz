@@ -28,6 +28,7 @@ li3.textcontent = "parenthesis", "quotes", "curly brackets", "square brackets";
 
 
 
+
 // credit to https://www.sitepoint.com/simple-javascript-quiz/
 const quizContainer = document.getElementById('quiz');
 const startQuizButton = document.getElementById('start-quiz');
