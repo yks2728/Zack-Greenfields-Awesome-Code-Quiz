@@ -4,7 +4,7 @@ var user = {
     lastInitial: lastInitial.value.trim()
 };
 
-var body = document.body;
+var main = document.main;
 var h1El = document.createElement("h1");
 var question1El = document.createElement("div");
 var question2El = document.createElement("div");
@@ -26,7 +26,13 @@ li1.textcontent = "SQL", "Python", "R", " all of the above";
 li2.textcontent = "numbers and strings", "other arrays", "booleans", "all of the above";
 li3.textcontent = "parenthesis", "quotes", "curly brackets", "square brackets";
 
-
+main.appendChild(h1El);
+h1El.appendChild(question1El);
+h1El.appendChild(question2El);
+h1El.appendChild(question3El);
+question1El.appendChild(li1);
+question2El.appendChild(li2);
+question3El.appendChild(li3);
 
 
 // credit to https://www.sitepoint.com/simple-javascript-quiz/
