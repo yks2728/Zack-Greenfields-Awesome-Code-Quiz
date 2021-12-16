@@ -1,10 +1,10 @@
-var countdown = 30
-var user = {
-    firstInitial: firstInitial.value.trim(),
-    lastInitial: lastInitial.value.trim()
-};
+var timer = 30
+// var user = {
+//     firstInitial: firstInitial.value.trim(),
+//     lastInitial: lastInitial.value.trim()
+// };
 
-var main = document.main;
+var main = document.querySelector("main")
 var h1El = document.createElement("h1");
 var question1El = document.createElement("div");
 var question2El = document.createElement("div");
@@ -15,6 +15,8 @@ var listEl = document.createElement("ol");
 var li1 = document.createElement("li");
 var li2 = document.createElement("li");
 var li3 = document.createElement("li");
+
+
 
 
 h1El.textContent ="Questions";
@@ -75,12 +77,14 @@ const myQuestions = [
         },
         correctAnswer: "a"
     },
-],
+]
 // end of credit
 
-var startQuiz = function() {
-    
+function displayQuestions() {
+    console.log(displayQuestions);
 }
+    
+
 
 
 var endQuiz = function() {
@@ -112,4 +116,5 @@ var endQuiz = function() {
 
 
 // submit initials and high score
-localStorage.setItem("user", JSON.stringify(user))
+// localStorage.setItem("user", JSON.stringify(user))
+startQuizButton.addEventListener("click", displayQuestions);
