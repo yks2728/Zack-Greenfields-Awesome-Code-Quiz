@@ -1,10 +1,14 @@
 var timer = 30
+var timerEl = document.querySelector("#timer");
+var decrementEl = document.querySelector("#decrement");
+
+
 // var user = {
 //     firstInitial: firstInitial.value.trim(),
 //     lastInitial: lastInitial.value.trim()
 // };
 
-var main = document.querySelector("main")
+var main = document.querySelector("main");
 var h1El = document.createElement("h1");
 var question1El = document.createElement("div");
 var question2El = document.createElement("div");
@@ -79,39 +83,7 @@ const myQuestions = [
         correctAnswer: "a"
     },
 ]
-
-const myAnswers = [
-    {
-        Answers: {
-            a: "SQL",
-            b: "Python",
-            c: "R",
-            d: "all of the above"
-        },
-        correctAnswer: "d"
-    },
-    {
-        Answers: {
-            a: "number and strings",
-            b: "other arrays",
-            c: "booleans",
-            d: "all of the above"
-        },
-        correctAnswer: "d"
-    },
-    {
-        Answers: {
-            a: "parenthesis",
-            b: "quotes",
-            c: "curly brackets",
-            d: "square brackets"
-        },
-        correctAnswer: "a"
-    },
-]
 // end of credit
-
-const correctAnswer = ["d", "d", "a"]
 
 function displayQuestions() {
     console.log(displayQuestions);
@@ -158,3 +130,4 @@ function endQuiz() {
 // submit initials and high score
 // localStorage.setItem("user", JSON.stringify(user))
 startQuizButton.addEventListener("click", displayQuestions);
+startQuizButton.addEventListener("click", displayAnswers);
