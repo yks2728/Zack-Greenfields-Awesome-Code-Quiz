@@ -10,23 +10,24 @@
 <body>
     <header>
         <div class="page-title">
-            <h1>Code Quiz</h1>
+           <h1>Code Quiz</h1>
+        </div>
+        <div class="timer">
+            <h4>Current Time: <span id="time">30</span></h4>
         </div>
     </header>
-    <div class="wrapper">
-        <div class="container">
-            <div class="timer">
-                <h4>Current Time: <span id="time">30</span></h4>
-            </div>
-        </div>
-    </div>
+
     <main>
-        <h2>Try your luck with this code quiz</h2>
-        <p>You have 30 seconds on the clock</p>
-        <p>Any incorrect answer takes 10 seconds off the clock</p>
+        <div class="container" id="container">
+            <h2>Try your luck with this code quiz</h2>
+            <p>You have 30 seconds on the clock</p>
+            <p>Any incorrect answer takes 10 seconds off the clock</p>
+            <button id="start-quiz">Start Quiz</button>
+        </div>
+        
         <!-- Credit to https://www.sitepoint.com/simple-javascript-quiz/ -->
-        <div id="quiz"></div>
-        <button id="start-quiz">Start Quiz</button>
+        <div class="hide" id="quiz"></div>
+        
         <div id="final-results"></div>
         <!-- End of credit -->
     </main>

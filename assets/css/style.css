@@ -1,0 +1,24 @@
+header {
+    display:flex;
+    align-items: center;
+    width: 100%;
+}
+
+.timer {
+    text-align: right;
+}
+
+.page-title {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
