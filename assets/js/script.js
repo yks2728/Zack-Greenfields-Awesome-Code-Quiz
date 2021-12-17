@@ -40,6 +40,7 @@ question3El.appendChild(li3);
 // credit to https://www.sitepoint.com/simple-javascript-quiz/
 const quizContainer = document.getElementById('quiz');
 const startQuizButton = document.getElementById('start-quiz');
+const question1Container = document.querySelector('question-1')
 const finalResultsContainer = document.getElementById('final-results');
 
 // end of credit
@@ -78,21 +79,60 @@ const myQuestions = [
         correctAnswer: "a"
     },
 ]
+
+const myAnswers = [
+    {
+        Answers: {
+            a: "SQL",
+            b: "Python",
+            c: "R",
+            d: "all of the above"
+        },
+        correctAnswer: "d"
+    },
+    {
+        Answers: {
+            a: "number and strings",
+            b: "other arrays",
+            c: "booleans",
+            d: "all of the above"
+        },
+        correctAnswer: "d"
+    },
+    {
+        Answers: {
+            a: "parenthesis",
+            b: "quotes",
+            c: "curly brackets",
+            d: "square brackets"
+        },
+        correctAnswer: "a"
+    },
+]
 // end of credit
+
+const correctAnswer = ["d", "d", "a"]
 
 function displayQuestions() {
     console.log(displayQuestions);
 }
     
+function displayAnswers() {
+    console.log(displayAnswers);
+}
 
 
-
-var endQuiz = function() {
-    window.alert("Your time is up, lets see how you did")
+// credit to https://www.sitepoint.com/simple-javascript-quiz/ for the function
+function buildQuiz() {
+    
+}
+// end credit
+function endQuiz() {
+    window.alert("Your time is up, lets see how you did");
     // check localStorage for high score, if its not there use 0
     var highScore = localStorage.getItem("highscore");
     if (highScore === null) {
-        highScore = 0
+        highScore = 0;
     }
 
     // if timer is higher than previous attempts, user has new high score
@@ -109,10 +149,10 @@ var endQuiz = function() {
         startQuiz();
     }
     else {
-        window.alert("Thank you for taking the quiz!")
+        window.alert("Thank you for taking the quiz!");
     }
     endQuiz();
-};
+}
 
 
 // submit initials and high score
