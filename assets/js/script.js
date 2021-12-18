@@ -1,8 +1,12 @@
-var timer = 30;
+var timer= 30;
 var counter = 0;
-var timerEl = document.querySelector("#timer");
+var timerEl = document.querySelector("#time");
 var decrementEl = document.querySelector("#decrement");
 var currentScore = 0;
+
+
+
+
 
 // var user = {
 //   firstInitial: firstInitial.value.trim(),
@@ -92,8 +96,22 @@ function displayAnswers() {
   console.log(displayAnswers);
 }
 
+function setTimer() {
+  timeInterval = setInterval(function () {
+    if (timer > 0) {
+      timerEl.textContent = timer;
+      timer--;
+    } else {
+      timerEl.textContent = 0;
+      // enterScore()
+    }
+  }, 1000);
+}
+
+
 // credit to https://www.sitepoint.com/simple-javascript-quiz/ for the function
 function buildQuiz() {
+  setTimer();
   displayQuestions();
   main.innerHTML = "";
   var h1El = document.createElement("h1");
@@ -113,6 +131,7 @@ function buildQuiz() {
   question1El.innerHTML = myQuestions[counter].question;
   // question2El.textContent = "Arrays in JavaScript can be used to store___";
   // question3El.textContent = "The condition in and if/else statements is enclosed with___";
+
 
   button1.textContent = myQuestions[counter].answers.a;
   button2.textContent = myQuestions[counter].answers.b;
