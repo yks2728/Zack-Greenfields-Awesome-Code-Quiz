@@ -5,14 +5,6 @@ var decrementEl = document.querySelector("#decrement");
 var currentScore = 0;
 
 
-
-
-
-// var user = {
-//   firstInitial: firstInitial.value.trim(),
-//   lastInitial: lastInitial.value.trim(),
-// };
-
 var main = document.getElementById("quiz");
 // var h1El = document.createElement("h1");
 // var question1El = document.createElement("div");
@@ -178,12 +170,12 @@ function endQuiz() {
   // if timer is higher than previous attempts, user has new high score
   if (timer > highScore) {
     localStorage.setItem("highscore", timer.value);
-    localStorage.setItem("first initial", firstInitial.value);
-    localStorage.setItem("last initial", lastInitial.value);
+    localStorage.setItem("#first-name", FirstName.value);
+    localStorage.setItem("#last-name", lastInitial.value);
 
     alert(
-      firstInitial.value +
-        lastInitial.value +
+      FirstName.value +
+        LastName.value +
         " now has the high score of " +
         countdown
     );
