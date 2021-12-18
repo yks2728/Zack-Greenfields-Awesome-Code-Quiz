@@ -72,7 +72,7 @@ const myQuestions = [
             c: "booleans",
             d: "all of the above"
         },
-        correctAnswer: "d"
+        correctAnswer: "all of the above"
     },
     {
         question: "The condition in and if/else statements is enclosed with ___",
@@ -82,7 +82,7 @@ const myQuestions = [
             c: "curly brackets",
             d: "square brackets"
         },
-        correctAnswer: "a"
+        correctAnswer: "parenthesis"
     },
 ]
 // end of credit
@@ -100,6 +100,7 @@ function displayAnswers() {
 // credit to https://www.sitepoint.com/simple-javascript-quiz/ for the function
 function buildQuiz() {
     displayQuestions()
+    main.innerHTML = '';
     var h1El = document.createElement("h1");
 var question1El = document.createElement("div");
 // var question2El = document.createElement("div");
@@ -162,9 +163,11 @@ function endQuiz() {
         highScore = 0;
     }
 
+
+
     // if timer is higher than previous attempts, user has new high score
-    if (countdown > highScore) {
-        localStorage.setItem("highscore", countdown.value);
+    if (timer > highScore) {
+        localStorage.setItem("highscore", timer.value);
         localStorage.setItem("first initial", firstInitial.value);
         localStorage.setItem("last initial", lastInitial.value);
 
@@ -174,8 +177,7 @@ function endQuiz() {
     var tryAgainConfirm = window.confirm("would you like to try again?");
     if (tryAgainConfirm) {
         startQuiz();
-    }
-    else {
+    } else {
         window.alert("Thank you for taking the quiz!");
     }
     endQuiz();
