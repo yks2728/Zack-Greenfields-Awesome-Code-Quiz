@@ -125,10 +125,10 @@ function endQuiz() {
   counter = 30;
   window.alert("Your time is up, lets see how you did");
   // check localStorage for high score, if its not there use 0
-  var highScore = localStorage.getItem("highscore");
-  if (highScore === null) {
-    highScore = 0;
-  }
+  // var highScore = localStorage.getItem("highscore");
+  // if (highScore === null) {
+  //   highScore = 0;
+  // }
 
   // // if timer is higher than previous attempts, user has new high score
   // if (timer > highScore) {
@@ -140,7 +140,7 @@ function endQuiz() {
   //     FirstName.value +
   //       LastName.value +
   //       " now has the high score of " +
-  //       countdown
+  //       timer
   //   );
   // }
 
