@@ -1,8 +1,8 @@
 var timer= 30;
 var counter = 0;
 var timerEl = document.querySelector("#time");
-var decrementEl = document.querySelector("#decrement");
 var currentScore = 0;
+var check;
 
 var main = document.getElementById("quiz");
 // credit to https://www.sitepoint.com/simple-javascript-quiz/
@@ -107,9 +107,8 @@ function buildQuiz() {
 // end credit
 
 function checkAnswers(event) {
-  console.log(event.target);
-  if (event == myQuestions[counter].answers) {
-    currentScore++;
+  if (event.target.textContent === myQuestions[counter].correctAnswer) {
+    timer += 10;
   } else {
     timer -= 10;
   }
