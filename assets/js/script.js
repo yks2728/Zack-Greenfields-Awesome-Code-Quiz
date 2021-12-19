@@ -4,36 +4,7 @@ var timerEl = document.querySelector("#time");
 var decrementEl = document.querySelector("#decrement");
 var currentScore = 0;
 
-
 var main = document.getElementById("quiz");
-// var h1El = document.createElement("h1");
-// var question1El = document.createElement("div");
-// var question2El = document.createElement("div");
-// var question3El = document.createElement("div");
-// // create ordered list element
-// var listEl = document.createElement("ol");
-// // create ordered list items
-// var li1 = document.createElement("li");
-// var li2 = document.createElement("li");
-// var li3 = document.createElement("li");
-
-// h1El.textContent ="Questions";
-// question1El.textContent = "Which of these is used by baseball teams for managing databases";
-// question2El.textContent = "Arrays in JavaScript can be used to store___";
-// question3El.textContent = "The condition in and if/else statements is enclosed with___";
-
-// li1.textcontent = "SQL", "Python", "R", " all of the above";
-// li2.textcontent = "numbers and strings", "other arrays", "booleans", "all of the above";
-// li3.textcontent = "parenthesis", "quotes", "curly brackets", "square brackets";
-
-// main.appendChild(h1El);
-// h1El.appendChild(question1El);
-// h1El.appendChild(question2El);
-// h1El.appendChild(question3El);
-// question1El.appendChild(li1);
-// question2El.appendChild(li2);
-// question3El.appendChild(li3);
-
 // credit to https://www.sitepoint.com/simple-javascript-quiz/
 const quizContainer = document.getElementById("quiz");
 const startQuizButton = document.getElementById("start-quiz");
@@ -108,11 +79,6 @@ function buildQuiz() {
   main.innerHTML = "";
   var h1El = document.createElement("h1");
   var question1El = document.createElement("div");
-  // var question2El = document.createElement("div");
-  // var question3El = document.createElement("div");
-  // create ordered list element
-  // var listEl = document.createElement("ol");
-  // create ordered list items
   var button1 = document.createElement("button");
   var button2 = document.createElement("button");
   var button3 = document.createElement("button");
@@ -121,10 +87,6 @@ function buildQuiz() {
   h1El.textContent = "Questions";
   console.log(counter);
   question1El.innerHTML = myQuestions[counter].question;
-  // question2El.textContent = "Arrays in JavaScript can be used to store___";
-  // question3El.textContent = "The condition in and if/else statements is enclosed with___";
-
-
   button1.textContent = myQuestions[counter].answers.a;
   button2.textContent = myQuestions[counter].answers.b;
   button3.textContent = myQuestions[counter].answers.c;
@@ -142,10 +104,11 @@ function buildQuiz() {
   buttonContainer.appendChild(button4);
   main.appendChild(buttonContainer);
 }
+// end credit
 
 function checkAnswers(event) {
   console.log(event.target);
-  if (event.target.innerHTML == myQuestions[counter].answers) {
+  if (event == myQuestions[counter].answers) {
     currentScore++;
   } else {
     timer -= 10;
@@ -157,7 +120,7 @@ function checkAnswers(event) {
     endQuiz();
   }
 }
-// end credit
+
 function endQuiz() {
   counter = 0;
   window.alert("Your time is up, lets see how you did");
@@ -171,7 +134,7 @@ function endQuiz() {
   if (timer > highScore) {
     localStorage.setItem("highscore", timer.value);
     localStorage.setItem("#first-name", FirstName.value);
-    localStorage.setItem("#last-name", lastInitial.value);
+    localStorage.setItem("#last-name", LastName.value);
 
     alert(
       FirstName.value +
