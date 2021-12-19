@@ -1,8 +1,9 @@
 var timer= 30;
 var counter = 0;
 var timerEl = document.querySelector("#time");
-var currentScore = 0;
-var check;
+var currentScore = timer;
+
+
 
 var main = document.getElementById("quiz");
 // credit to https://www.sitepoint.com/simple-javascript-quiz/
@@ -121,7 +122,7 @@ function checkAnswers(event) {
 }
 
 function endQuiz() {
-  counter = 0;
+  counter = 30;
   window.alert("Your time is up, lets see how you did");
   // check localStorage for high score, if its not there use 0
   var highScore = localStorage.getItem("highscore");
@@ -129,19 +130,19 @@ function endQuiz() {
     highScore = 0;
   }
 
-  // if timer is higher than previous attempts, user has new high score
-  if (timer > highScore) {
-    localStorage.setItem("highscore", timer.value);
-    localStorage.setItem("#first-name", FirstName.value);
-    localStorage.setItem("#last-name", LastName.value);
+  // // if timer is higher than previous attempts, user has new high score
+  // if (timer > highScore) {
+  //   localStorage.setItem("highscore", timer.value);
+  //   localStorage.setItem("#first-name", FirstName.value);
+  //   localStorage.setItem("#last-name", LastName.value);
 
-    alert(
-      FirstName.value +
-        LastName.value +
-        " now has the high score of " +
-        countdown
-    );
-  }
+  //   alert(
+  //     FirstName.value +
+  //       LastName.value +
+  //       " now has the high score of " +
+  //       countdown
+  //   );
+  // }
 
   var tryAgainConfirm = window.confirm("would you like to try again?");
   if (tryAgainConfirm === true) {
