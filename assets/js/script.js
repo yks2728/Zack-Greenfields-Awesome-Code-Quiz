@@ -3,8 +3,6 @@ var counter = 0;
 var timerEl = document.querySelector("#time");
 var currentScore = timer;
 
-
-
 var main = document.getElementById("quiz");
 // credit to https://www.sitepoint.com/simple-javascript-quiz/
 const quizContainer = document.getElementById("quiz");
@@ -60,19 +58,6 @@ function displayAnswers() {
   console.log(displayAnswers);
 }
 
-function setTimer() {
-  timeInterval = setInterval(function () {
-    if (timer > 0) {
-      timerEl.textContent = timer;
-      timer--;
-    } else {
-      timerEl.textContent = 0;
-      // enterScore()
-    }
-  }, 1000);
-}
-
-
 // credit to https://www.sitepoint.com/simple-javascript-quiz/ for the function
 function buildQuiz() {
   setTimer();
@@ -107,6 +92,18 @@ function buildQuiz() {
 }
 // end credit
 
+function setTimer() {
+  timeInterval = setInterval(function () {
+    if (timer > 0) {
+      timerEl.textContent = timer;
+      timer--;
+    } else {
+      timerEl.textContent = 0;
+      // enterScore()
+    }
+  }, 1000);
+}
+
 function checkAnswers(event) {
   if (event.target.textContent === myQuestions[counter].correctAnswer) {
     timer += 10;
@@ -122,27 +119,13 @@ function checkAnswers(event) {
 }
 
 function endQuiz() {
-  counter = 30;
+  counter = 0;
   window.alert("Your time is up, lets see how you did");
   // check localStorage for high score, if its not there use 0
-  // var highScore = localStorage.getItem("highscore");
-  // if (highScore === null) {
-  //   highScore = 0;
-  // }
-
-  // // if timer is higher than previous attempts, user has new high score
-  // if (timer > highScore) {
-  //   localStorage.setItem("highscore", timer.value);
-  //   localStorage.setItem("#first-name", FirstName.value);
-  //   localStorage.setItem("#last-name", LastName.value);
-
-  //   alert(
-  //     FirstName.value +
-  //       LastName.value +
-  //       " now has the high score of " +
-  //       timer
-  //   );
-  // }
+  var highScore = localStorage.getItem("highscore");
+  if (highScore === null) {
+    highScore = 0;
+  }
 
   var tryAgainConfirm = window.confirm("would you like to try again?");
   if (tryAgainConfirm === true) {
@@ -152,16 +135,4 @@ function endQuiz() {
   }
 }
 
-// submit initials and high score
-// localStorage.setItem("user", JSON.stringify(user))
 startQuizButton.addEventListener("click", buildQuiz);
-
-
-
-// set interval
-// clear interval
-// w3 schools
-// High Score form in HTML
-// e.preventDefault
-// javaScriptFirstName: document.querySelector('#first-name').value.trim()
-// same for last name
